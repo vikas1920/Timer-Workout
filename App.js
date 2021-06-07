@@ -115,9 +115,9 @@ const App = () => {
         alignItems: 'center',
         backgroundColor:
           working && wG > 0
-            ? '#ffeecc'
+            ? '#ff6666'
             : resting && bG > 0
-            ? '#eeffcc'
+            ? '#79d2a6'
             : '#ccffff',
       }}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -128,7 +128,11 @@ const App = () => {
             textAlign: 'center',
             textAlignVertical: 'center',
           }}>
-          Happy Workout
+          {working && wG > 0
+            ? 'Working'
+            : resting && bG >= 0
+            ? 'Resting'
+            : 'Welcome'}
         </Text>
       </View>
       <View style={{height: h * 0.45}}>
